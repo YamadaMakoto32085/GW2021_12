@@ -80,6 +80,7 @@ namespace RestaurantOrderSystem
             this.btMain.TabIndex = 3;
             this.btMain.Text = "メイン";
             this.btMain.UseVisualStyleBackColor = false;
+            this.btMain.Click += new System.EventHandler(this.btMain_Click);
             // 
             // btCancel
             // 
@@ -91,6 +92,7 @@ namespace RestaurantOrderSystem
             this.btCancel.TabIndex = 3;
             this.btCancel.Text = "取消";
             this.btCancel.UseVisualStyleBackColor = false;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // btOrder
             // 
@@ -102,6 +104,7 @@ namespace RestaurantOrderSystem
             this.btOrder.TabIndex = 3;
             this.btOrder.Text = "注文";
             this.btOrder.UseVisualStyleBackColor = false;
+            this.btOrder.Click += new System.EventHandler(this.btOrder_Click);
             // 
             // btSub
             // 
@@ -113,6 +116,7 @@ namespace RestaurantOrderSystem
             this.btSub.TabIndex = 3;
             this.btSub.Text = "サブ";
             this.btSub.UseVisualStyleBackColor = false;
+            this.btSub.Click += new System.EventHandler(this.btSub_Click);
             // 
             // btDessert
             // 
@@ -124,6 +128,7 @@ namespace RestaurantOrderSystem
             this.btDessert.TabIndex = 3;
             this.btDessert.Text = "デザート";
             this.btDessert.UseVisualStyleBackColor = false;
+            this.btDessert.Click += new System.EventHandler(this.btDessert_Click);
             // 
             // btDrink
             // 
@@ -135,6 +140,7 @@ namespace RestaurantOrderSystem
             this.btDrink.TabIndex = 3;
             this.btDrink.Text = "ドリンク";
             this.btDrink.UseVisualStyleBackColor = false;
+            this.btDrink.Click += new System.EventHandler(this.btDrink_Click);
             // 
             // Form1
             // 
