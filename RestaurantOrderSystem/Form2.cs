@@ -24,7 +24,9 @@ namespace RestaurantOrderSystem
 
         private void btDecision_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
+            Form3 f3 = new Form3();
+            f3.Show();
         }
     }
 }

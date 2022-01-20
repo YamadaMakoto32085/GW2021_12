@@ -42,12 +42,12 @@ namespace RestaurantOrderSystem
 
         private void btCancel_Click(object sender, EventArgs e)
         {
-            tbOrdertList.Clear();
+            lbOrderList.Items.Clear();
         }
 
         private void btMain_Click(object sender, EventArgs e)
         {
-            //CreateButton1();
+            ChangeButton1();
             btMain.Enabled = false;
             btSub.Enabled = true;
             btDessert.Enabled = true;
@@ -56,7 +56,7 @@ namespace RestaurantOrderSystem
 
         private void btSub_Click(object sender, EventArgs e)
         {
-            //CreateButton2();
+            ChangeButton2();
             btMain.Enabled = true;
             btSub.Enabled = false;
             btDessert.Enabled = true;
@@ -65,7 +65,7 @@ namespace RestaurantOrderSystem
 
         private void btDessert_Click(object sender, EventArgs e)
         {
-            //CreateButton3();
+            ChangeButton3();
             btMain.Enabled = true;
             btSub.Enabled = true;
             btDessert.Enabled = false;
@@ -74,11 +74,107 @@ namespace RestaurantOrderSystem
 
         private void btDrink_Click(object sender, EventArgs e)
         {
-            //CreateButton4();
+            ChangeButton4();
             btMain.Enabled = true;
             btSub.Enabled = true;
             btDessert.Enabled = true;
             btDrink.Enabled = false;
+        }
+
+        private void ChangeButton1()
+        {
+            nud1.Enabled = false;
+            nud2.Enabled = false;
+            nud3.Enabled = false;
+            nud4.Enabled = false;
+            int price1 = 232;
+            int price2 = 143;
+            int price3 = 210;
+            int price4 = 173;
+            btCom1.Enabled = true;
+            btCom2.Enabled = true;
+            btCom3.Enabled = true;
+            btCom4.Enabled = true;
+            btCom1.Text = "マグロ";
+            btCom2.Text = "イカ";
+            btCom3.Text = "エビ";
+            btCom4.Text = "イクラ";
+            lbPrice1.Text = price1 + "円";
+            lbPrice2.Text = price2 + "円";
+            lbPrice3.Text = price3 + "円";
+            lbPrice4.Text = price4 + "円";
+        }
+
+        private void ChangeButton2()
+        {
+            nud1.Enabled = false;
+            nud2.Enabled = false;
+            nud3.Enabled = false;
+            nud4.Enabled = false;
+            int price1 = 120;
+            int price2 = 103;
+            int price3 = 112;
+            int price4 = 139;
+            btCom1.Enabled = true;
+            btCom2.Enabled = true;
+            btCom3.Enabled = true;
+            btCom4.Enabled = true;
+            btCom1.Text = "唐揚げ";
+            btCom2.Text = "天ぷら";
+            btCom3.Text = "塩むすび";
+            btCom4.Text = "かき揚げ";
+            lbPrice1.Text = price1 + "円";
+            lbPrice2.Text = price2 + "円";
+            lbPrice3.Text = price3 + "円";
+            lbPrice4.Text = price4 + "円";
+        }
+
+        private void ChangeButton3()
+        {
+            nud1.Enabled = false;
+            nud2.Enabled = false;
+            nud3.Enabled = false;
+            nud4.Enabled = false;
+            int price1 = 132;
+            int price2 = 122;
+            int price3 = 146;
+            int price4 = 137;
+            btCom1.Enabled = true;
+            btCom2.Enabled = true;
+            btCom3.Enabled = true;
+            btCom4.Enabled = true;
+            btCom1.Text = "饅頭";
+            btCom2.Text = "羊羹";
+            btCom3.Text = "桜餅";
+            btCom4.Text = "草餅";
+            lbPrice1.Text = price1 + "円";
+            lbPrice2.Text = price2 + "円";
+            lbPrice3.Text = price3 + "円";
+            lbPrice4.Text = price4 + "円";
+        }
+
+        private void ChangeButton4()
+        {
+            nud1.Enabled = false;
+            nud2.Enabled = false;
+            nud3.Enabled = false;
+            nud4.Enabled = false;
+            int price1 = 100;
+            int price2 = 100;
+            int price3 = 100;
+            int price4 = 100;
+            btCom1.Enabled = true;
+            btCom2.Enabled = true;
+            btCom3.Enabled = true;
+            btCom4.Enabled = true;
+            btCom1.Text = "麦茶";
+            btCom2.Text = "ほうじ茶";
+            btCom3.Text = "甘酒";
+            btCom4.Text = "ビール";
+            lbPrice1.Text = price1 + "円";
+            lbPrice2.Text = price2 + "円";
+            lbPrice3.Text = price3 + "円";
+            lbPrice4.Text = price4 + "円";
         }
 
         private void CreateButton1()
@@ -237,6 +333,118 @@ namespace RestaurantOrderSystem
             tb11.Height = 20;
             tb12.Height = 20;
             this.Controls.Add(pb4);
+        }
+
+        private void btCom1_Click(object sender, EventArgs e)
+        {
+            int price1 = 232;
+            int price2 = 120;
+            int price3 = 132;
+            int price4 = 100;
+            nud1.Enabled = true;
+            nud1.Minimum = 1;
+            lbOrderList.Items.Add(btCom1.Text);
+            lbOrderList.Items.Add(nud1.Value);
+            if (lbPrice1.Text == "232円")
+            {
+                lbOrderList.Items.Add(price1 * nud1.Value);
+            }
+            else if (lbPrice1.Text == "120円")
+            {
+                lbOrderList.Items.Add(price2 * nud1.Value);
+            }
+            else if(lbPrice1.Text == "132円")
+            {
+                lbOrderList.Items.Add(price3 * nud1.Value);
+            }
+            else if(lbPrice1.Text == "100円")
+            {
+                lbOrderList.Items.Add(price4 * nud1.Value);
+            }
+        }
+
+        private void btCom2_Click(object sender, EventArgs e)
+        {
+            int price1 = 143;
+            int price2 = 103;
+            int price3 = 122;
+            int price4 = 100;
+            nud2.Enabled = true;
+            nud2.Minimum = 1;
+            lbOrderList.Items.Add(btCom2.Text);
+            lbOrderList.Items.Add(nud2.Value);
+            if (lbPrice2.Text == "143円")
+            {
+                lbOrderList.Items.Add(price1 * nud2.Value);
+            }
+            else if (lbPrice2.Text == "103円")
+            {
+                lbOrderList.Items.Add(price2 * nud2.Value);
+            }
+            else if (lbPrice2.Text == "122円")
+            {
+                lbOrderList.Items.Add(price3 * nud2.Value);
+            }
+            else if (lbPrice2.Text == "100円")
+            {
+                lbOrderList.Items.Add(price4 * nud2.Value);
+            }
+        }
+
+        private void btCom3_Click(object sender, EventArgs e)
+        {
+            int price1 = 210;
+            int price2 = 112;
+            int price3 = 146;
+            int price4 = 100;
+            nud3.Enabled = true;
+            nud3.Minimum = 1;
+            lbOrderList.Items.Add(btCom3.Text);
+            lbOrderList.Items.Add(nud3.Value);
+            if (lbPrice3.Text == "210円")
+            {
+                lbOrderList.Items.Add(price1 * nud3.Value);
+            }
+            else if (lbPrice3.Text == "112円")
+            {
+                lbOrderList.Items.Add(price2 * nud3.Value);
+            }
+            else if (lbPrice3.Text == "146円")
+            {
+                lbOrderList.Items.Add(price3 * nud3.Value);
+            }
+            else if (lbPrice3.Text == "100円")
+            {
+                lbOrderList.Items.Add(price4 * nud3.Value);
+            }
+        }
+
+        private void btCom4_Click(object sender, EventArgs e)
+        {
+            int price1 = 173;
+            int price2 = 139;
+            int price3 = 137;
+            int price4 = 100;
+            nud4.Enabled = true;
+            nud4.Minimum = 1;
+            lbOrderList.Items.Add(btCom4.Text);
+            lbOrderList.Items.Add(nud4.Value);
+            if (lbPrice4.Text == "173円")
+            {
+                lbOrderList.Items.Add(price1 * nud4.Value);
+            }
+            else if (lbPrice4.Text == "139円")
+            {
+                lbOrderList.Items.Add(price2 * nud4.Value);
+            }
+            else if (lbPrice4.Text == "137円")
+            {
+                lbOrderList.Items.Add(price3 * nud4.Value);
+            }
+            else if (lbPrice4.Text == "100円")
+            {
+                lbOrderList.Items.Add(price4 * nud4.Value);
+            }
         }
     }
 }
