@@ -12,6 +12,7 @@ namespace RestaurantOrderSystem
 {
     public partial class Form1 : Form
     {
+        private Menu[] menuButtons;
         public Form1()
         {
             InitializeComponent();
@@ -121,56 +122,66 @@ namespace RestaurantOrderSystem
             lbPrice1.Text = price1 + "円";
         }
 
-        private void CreateButton1()
+        private void CreateButton1(ref Menu[] menus)
         {
-            NumericUpDown nud1 = new NumericUpDown();
+            Button bt1 = new Button();
             TextBox tb1 = new TextBox();
-            TextBox tb2 = new TextBox();
-            TextBox tb3 = new TextBox();
+            NumericUpDown nud1 = new NumericUpDown();
             string[] picture1 =
             {
                 "ラーメン","焼きそば","牛丼","ハンバーグ","かつ丼定食",
             };
+            
             nud1.Maximum = 10;
 
         }
 
-        private void CreateButton2()
+        private void CreateButton2(ref Menu[] menus)
         {
+            Panel pl2 = new Panel();
+            TextBox tb2 = new TextBox();
             NumericUpDown nud2 = new NumericUpDown();
-            TextBox tb4 = new TextBox();
-            TextBox tb5 = new TextBox();
-            TextBox tb6 = new TextBox();
             string[] picture2 =
             {
                 "唐揚げ","フライドポテト","サラダ","コッペパン",
             };
+            pl2.Top = 15;
+            pl2.Left = 13;
+            pl2.Width = 150;
+            pl2.Height = 140;
             nud2.Maximum = 10;
+            
         }
 
-        private void CreateButton3()
+        private void CreateButton3(ref Menu[] menus)
         {
+            Panel pl3 = new Panel();
+            TextBox tb3 = new TextBox();
             NumericUpDown nud3 = new NumericUpDown();
-            TextBox tb7 = new TextBox();
-            TextBox tb8 = new TextBox();
-            TextBox tb9 = new TextBox();
             string[] picture3 =
             {
                 "イチゴパフェ","ショートケーキ","ホットケーキ","モンブラン",
             };
+            pl3.Top = 15;
+            pl3.Left = 13;
+            pl3.Width = 150;
+            pl3.Height = 140;
             nud3.Maximum = 10;
         }
 
-        private void CreateButton4()
+        private void CreateButton4(ref Menu[] menus)
         {
+            Panel pl4 = new Panel();
+            TextBox tb4 = new TextBox();
             NumericUpDown nud4 = new NumericUpDown();
-            TextBox tb10 = new TextBox();
-            TextBox tb11 = new TextBox();
-            TextBox tb12 = new TextBox();
             string[] picture4 =
             {
                 "コーラ","メロンソーダ","コーヒー",
             };
+            pl4.Top = 15;
+            pl4.Left = 13;
+            pl4.Width = 150;
+            pl4.Height = 140;
             nud4.Maximum = 10;
         }
 
