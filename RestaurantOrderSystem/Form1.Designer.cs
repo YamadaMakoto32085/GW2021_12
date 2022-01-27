@@ -38,11 +38,12 @@ namespace RestaurantOrderSystem
             this.btDrink = new System.Windows.Forms.Button();
             this.plCmWindow = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nud1 = new System.Windows.Forms.NumericUpDown();
             this.lbPrice1 = new System.Windows.Forms.Label();
             this.btCom1 = new System.Windows.Forms.Button();
-            this.nud1 = new System.Windows.Forms.NumericUpDown();
             this.lbOrderList = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.plCmWindow.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud1)).BeginInit();
@@ -68,7 +69,6 @@ namespace RestaurantOrderSystem
             this.btMain.TabIndex = 3;
             this.btMain.Text = "メイン";
             this.btMain.UseVisualStyleBackColor = false;
-            this.btMain.Click += new System.EventHandler(this.btMain_Click);
             // 
             // btCancel
             // 
@@ -104,7 +104,6 @@ namespace RestaurantOrderSystem
             this.btSub.TabIndex = 3;
             this.btSub.Text = "サブ";
             this.btSub.UseVisualStyleBackColor = false;
-            this.btSub.Click += new System.EventHandler(this.btSub_Click);
             // 
             // btDessert
             // 
@@ -116,7 +115,6 @@ namespace RestaurantOrderSystem
             this.btDessert.TabIndex = 3;
             this.btDessert.Text = "デザート";
             this.btDessert.UseVisualStyleBackColor = false;
-            this.btDessert.Click += new System.EventHandler(this.btDessert_Click);
             // 
             // btDrink
             // 
@@ -128,7 +126,6 @@ namespace RestaurantOrderSystem
             this.btDrink.TabIndex = 3;
             this.btDrink.Text = "ドリンク";
             this.btDrink.UseVisualStyleBackColor = false;
-            this.btDrink.Click += new System.EventHandler(this.btDrink_Click);
             // 
             // plCmWindow
             // 
@@ -138,18 +135,40 @@ namespace RestaurantOrderSystem
             this.plCmWindow.Name = "plCmWindow";
             this.plCmWindow.Size = new System.Drawing.Size(726, 708);
             this.plCmWindow.TabIndex = 4;
+            this.plCmWindow.Layout += new System.Windows.Forms.LayoutEventHandler(this.plCmWindow_Layout);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.nud1);
             this.panel2.Controls.Add(this.lbPrice1);
             this.panel2.Controls.Add(this.btCom1);
-            this.panel2.Controls.Add(this.nud1);
             this.panel2.Location = new System.Drawing.Point(15, 13);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 140);
             this.panel2.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 102);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(150, 19);
+            this.textBox1.TabIndex = 3;
+            // 
+            // nud1
+            // 
+            this.nud1.Enabled = false;
+            this.nud1.Location = new System.Drawing.Point(0, 121);
+            this.nud1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nud1.Name = "nud1";
+            this.nud1.Size = new System.Drawing.Size(45, 19);
+            this.nud1.TabIndex = 1;
             // 
             // lbPrice1
             // 
@@ -169,19 +188,6 @@ namespace RestaurantOrderSystem
             this.btCom1.UseVisualStyleBackColor = true;
             this.btCom1.Click += new System.EventHandler(this.btCom1_Click);
             // 
-            // nud1
-            // 
-            this.nud1.Enabled = false;
-            this.nud1.Location = new System.Drawing.Point(0, 121);
-            this.nud1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nud1.Name = "nud1";
-            this.nud1.Size = new System.Drawing.Size(40, 19);
-            this.nud1.TabIndex = 1;
-            // 
             // lbOrderList
             // 
             this.lbOrderList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -192,12 +198,14 @@ namespace RestaurantOrderSystem
             this.lbOrderList.Size = new System.Drawing.Size(394, 580);
             this.lbOrderList.TabIndex = 5;
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 19);
-            this.textBox1.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "商品の価格";
             // 
             // Form1
             // 
@@ -242,6 +250,7 @@ namespace RestaurantOrderSystem
         private System.Windows.Forms.NumericUpDown nud1;
         private System.Windows.Forms.ListBox lbOrderList;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
