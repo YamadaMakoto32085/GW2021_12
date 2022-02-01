@@ -47,13 +47,9 @@ namespace RestaurantOrderSystem
         {
             CreateButton1(ref menuButtons);
             SuspendLayout();
-            const int offsetX = 15, offsetY = 13;
             for (int i = 0; i < menuButtons.Length; i++)
             {
                 menuButtons[i].Name = "menu" + i;
-                int sizeW = menuButtons[i].Size.Width;
-                int sizeH = menuButtons[i].Size.Height;
-                menuButtons[i].Location = new Point(offsetX + i % 8 * sizeW, offsetY + i % 8 * sizeH);
             }
 
 
@@ -68,13 +64,9 @@ namespace RestaurantOrderSystem
         {
             CreateButton2(ref menuButtons);
             SuspendLayout();
-            const int offsetX = 15, offsetY = 13;
             for (int i = 0; i < menuButtons.Length; i++)
             {
                 menuButtons[i].Name = "menu" + i;
-                int sizeW = menuButtons[i].Size.Width;
-                int sizeH = menuButtons[i].Size.Height;
-                menuButtons[i].Location = new Point(offsetX + i % 8 * sizeW, offsetY + i % 8 * sizeH);
             }
 
 
@@ -89,13 +81,9 @@ namespace RestaurantOrderSystem
         {
             CreateButton3(ref menuButtons);
             SuspendLayout();
-            const int offsetX = 15, offsetY = 13;
             for (int i = 0; i < menuButtons.Length; i++)
             {
                 menuButtons[i].Name = "menu" + i;
-                int sizeW = menuButtons[i].Size.Width;
-                int sizeH = menuButtons[i].Size.Height;
-                menuButtons[i].Location = new Point(offsetX + i % 8 * sizeW, offsetY + i % 8 * sizeH);
             }
 
 
@@ -110,13 +98,9 @@ namespace RestaurantOrderSystem
         {
             CreateButton4(ref menuButtons);
             SuspendLayout();
-            const int offsetX = 15, offsetY = 13;
             for (int i = 0; i < menuButtons.Length; i++)
             {
                 menuButtons[i].Name = "menu" + i;
-                int sizeW = menuButtons[i].Size.Width;
-                int sizeH = menuButtons[i].Size.Height;
-                menuButtons[i].Location = new Point(offsetX + i % 8 * sizeW, offsetY + i % 8 * sizeH);
             }
 
 
