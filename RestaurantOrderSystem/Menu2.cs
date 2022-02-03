@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace RestaurantOrderSystem
 {
-    class Menu : Button
+    class Menu2 : TextBox
     {
-        private const int SizeW = 197, SizeH = 147;
-        public string Picture { get; set; }
+        private const int SizeW = 156, SizeH = 19;
+        public Color TbColor { get; } = Color.PaleGreen;
 
-        public Menu(string picture)
+        public Menu2(string text)
         {
-            Picture = picture;
+            Text = text;
             Size = new Size(SizeW, SizeH);
+            BackColor = TbColor;
         }
-
     }
 }

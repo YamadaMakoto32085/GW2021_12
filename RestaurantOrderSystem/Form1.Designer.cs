@@ -43,10 +43,23 @@ namespace RestaurantOrderSystem
             this.lbPrice1 = new System.Windows.Forms.Label();
             this.btCom1 = new System.Windows.Forms.Button();
             this.lbOrderList = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.plCmWindow.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNowTime
@@ -130,6 +143,8 @@ namespace RestaurantOrderSystem
             // plCmWindow
             // 
             this.plCmWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.plCmWindow.Controls.Add(this.panel3);
+            this.plCmWindow.Controls.Add(this.panel1);
             this.plCmWindow.Controls.Add(this.panel2);
             this.plCmWindow.Location = new System.Drawing.Point(15, 28);
             this.plCmWindow.Name = "plCmWindow";
@@ -140,34 +155,34 @@ namespace RestaurantOrderSystem
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.nud1);
             this.panel2.Controls.Add(this.lbPrice1);
             this.panel2.Controls.Add(this.btCom1);
             this.panel2.Location = new System.Drawing.Point(15, 13);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 140);
+            this.panel2.Size = new System.Drawing.Size(197, 184);
             this.panel2.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 102);
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBox1.Location = new System.Drawing.Point(0, 144);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 19);
+            this.textBox1.Size = new System.Drawing.Size(156, 19);
             this.textBox1.TabIndex = 3;
             // 
             // nud1
             // 
             this.nud1.Enabled = false;
-            this.nud1.Location = new System.Drawing.Point(0, 121);
+            this.nud1.Location = new System.Drawing.Point(153, 144);
             this.nud1.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.nud1.Name = "nud1";
-            this.nud1.Size = new System.Drawing.Size(45, 19);
+            this.nud1.Size = new System.Drawing.Size(44, 19);
             this.nud1.TabIndex = 1;
             // 
             // lbPrice1
@@ -183,7 +198,7 @@ namespace RestaurantOrderSystem
             this.btCom1.Enabled = false;
             this.btCom1.Location = new System.Drawing.Point(0, 0);
             this.btCom1.Name = "btCom1";
-            this.btCom1.Size = new System.Drawing.Size(150, 105);
+            this.btCom1.Size = new System.Drawing.Size(197, 147);
             this.btCom1.TabIndex = 0;
             this.btCom1.UseVisualStyleBackColor = true;
             this.btCom1.Click += new System.EventHandler(this.btCom1_Click);
@@ -198,14 +213,107 @@ namespace RestaurantOrderSystem
             this.lbOrderList.Size = new System.Drawing.Size(394, 580);
             this.lbOrderList.TabIndex = 5;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(230, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(197, 163);
+            this.panel1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBox2.Location = new System.Drawing.Point(0, 144);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(156, 19);
+            this.textBox2.TabIndex = 3;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Enabled = false;
+            this.numericUpDown1.Location = new System.Drawing.Point(153, 144);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(44, 19);
+            this.numericUpDown1.TabIndex = 1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 123);
+            this.label1.Location = new System.Drawing.Point(71, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 12);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "商品の価格";
+            this.label1.Size = new System.Drawing.Size(0, 12);
+            this.label1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 147);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btCom1_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.numericUpDown2);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Location = new System.Drawing.Point(445, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(197, 163);
+            this.panel3.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBox3.Location = new System.Drawing.Point(0, 144);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(156, 19);
+            this.textBox3.TabIndex = 3;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Enabled = false;
+            this.numericUpDown2.Location = new System.Drawing.Point(153, 144);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(44, 19);
+            this.numericUpDown2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(71, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 12);
+            this.label2.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(197, 147);
+            this.button2.TabIndex = 0;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btCom1_Click);
             // 
             // Form1
             // 
@@ -229,6 +337,12 @@ namespace RestaurantOrderSystem
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,7 +364,16 @@ namespace RestaurantOrderSystem
         private System.Windows.Forms.NumericUpDown nud1;
         private System.Windows.Forms.ListBox lbOrderList;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

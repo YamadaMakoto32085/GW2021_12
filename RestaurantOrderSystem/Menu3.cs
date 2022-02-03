@@ -8,16 +8,15 @@ using System.Windows.Forms;
 
 namespace RestaurantOrderSystem
 {
-    class Menu : Button
+    class Menu3 : NumericUpDown
     {
-        private const int SizeW = 197, SizeH = 147;
-        public string Picture { get; set; }
+        private const int SizeW = 44, SizeH = 19;
 
-        public Menu(string picture)
+        public Menu3()
         {
-            Picture = picture;
+            Maximum = 10;
             Size = new Size(SizeW, SizeH);
+            Enabled = false;
         }
-
     }
 }

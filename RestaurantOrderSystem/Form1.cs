@@ -12,7 +12,9 @@ namespace RestaurantOrderSystem
 {
     public partial class Form1 : Form
     {
-        private Menu[] menuPanels;
+        private Menu[] menuButtons;
+        private Menu2[] menuTexts;
+        private Menu3 menuNud;
         public Form1()
         {
             InitializeComponent();
@@ -45,21 +47,34 @@ namespace RestaurantOrderSystem
 
         private void BtMain_Click(object sender, EventArgs e)
         {
-            CreateButton1(ref menuPanels);
-            CreateText1(ref menuPanels);
-            CreateLabel1(ref menuPanels);
+            CreateButton1(ref menuButtons);
+            CreateText1(ref menuTexts);
+            CreateNud(ref menuNud);
+
             SuspendLayout();
-            const int offsetX = 30, offsetY = 41;
-            for (int i = 0; i < menuPanels.Length; i++)
+            const int btoffX = 15, btoffY = 13;
+            const int tboffX = 15, tboffY = 144;
+            for (int i = 0; i < menuButtons.Length; i++)
             {
-                menuPanels[i].Name = "menu" + i;
-                int sizeW = menuPanels[i].Size.Width;
-                int sizeH = menuPanels[i].Size.Height;
-                menuPanels[i].Location = new Point(offsetX + i % 8 * sizeW, offsetY + i / 8 * sizeH);
+                menuButtons[i].Name = "menu" + i;
+                int sizeW = menuButtons[i].Size.Width;
+                int sizeH = menuButtons[i].Size.Height;
+                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
+                menuButtons[i].Click += MenuButtons_Click;
             }
 
-            Controls.AddRange(menuPanels);
+            for (int i = 0; i < menuTexts.Length; i++)
+            {
+                int sizeW = menuTexts[i].Size.Width;
+                int sizeH = menuTexts[i].Size.Height;
+                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
+            }
+
+            Controls.AddRange(menuButtons);
+            Controls.AddRange(menuTexts);
+            Controls.Add(menuNud);
             ResumeLayout(false);
+
             btMain.Enabled = false;
             btSub.Enabled = true;
             btDessert.Enabled = true;
@@ -68,73 +83,48 @@ namespace RestaurantOrderSystem
 
         private void BtSub_Click(object sender, EventArgs e)
         {
-            CreateButton2(ref menuPanels);
-            CreateText2(ref menuPanels);
-            CreateLabel2(ref menuPanels);
-            SuspendLayout();
-            const int offsetX = 30, offsetY = 41;
-            for (int i = 0; i < menuPanels.Length; i++)
-            {
-                menuPanels[i].Name = "menu" + i;
-                int sizeW = menuPanels[i].Size.Width;
-                int sizeH = menuPanels[i].Size.Height;
-                menuPanels[i].Location = new Point(offsetX + i % 8 * sizeW, offsetY + i / 8 * sizeH);
-            }
+            CreateButton2(ref menuButtons);
+            CreateText2(ref menuTexts);
+            CreateNud(ref menuNud);
 
-            Controls.AddRange(menuPanels);
-            ResumeLayout(false);
             btMain.Enabled = true;
             btSub.Enabled = false;
             btDessert.Enabled = true;
             btDrink.Enabled = true;
         }
+
         
         private void BtDessert_Click(object sender, EventArgs e)
         {
-            CreateButton3(ref menuPanels);
-            CreateText3(ref menuPanels);
-            CreateLabel3(ref menuPanels);
-            SuspendLayout();
-            const int offsetX = 30, offsetY = 41;
-            for (int i = 0; i < menuPanels.Length; i++)
-            {
-                menuPanels[i].Name = "menu" + i;
-                int sizeW = menuPanels[i].Size.Width;
-                int sizeH = menuPanels[i].Size.Height;
-                menuPanels[i].Location = new Point(offsetX + i % 8 * sizeW, offsetY + i / 8 * sizeH); 
-            }
+            CreateButton3(ref menuButtons);
+            CreateText3(ref menuTexts);
+            CreateNud(ref menuNud);
 
-            Controls.AddRange(menuPanels);
-            ResumeLayout(false);
             btMain.Enabled = true;
             btSub.Enabled = true;
             btDessert.Enabled = false;
             btDrink.Enabled = true;
         }
+
         
         private void BtDrink_Click(object sender, EventArgs e)
         {
-            CreateButton4(ref menuPanels);
-            CreateText4(ref menuPanels);
-            CreateLabel4(ref menuPanels);
-            SuspendLayout();
-            const int offsetX = 30, offsetY = 41;
-            for (int i = 0; i < menuPanels.Length; i++)
-            {   
-                menuPanels[i].Name = "menu" + i;
-                int sizeW = menuPanels[i].Size.Width;
-                int sizeH = menuPanels[i].Size.Height;
-                menuPanels[i].Location = new Point(offsetX + i % 8 * sizeW, offsetY + i / 8 * sizeH); 
-            }
+            CreateButton4(ref menuButtons);
+            CreateText4(ref menuTexts);
+            CreateNud(ref menuNud);
 
-            Controls.AddRange(menuPanels);
-            ResumeLayout(false);
             btMain.Enabled = true;
             btSub.Enabled = true;
             btDessert.Enabled = true;
             btDrink.Enabled = false;
         }
-        
+
+        private void MenuButtons_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void ChangePanels1()
         {
             nud1.Value = 0;
@@ -177,18 +167,17 @@ namespace RestaurantOrderSystem
 
         private void CreateButton1(ref Menu[] menus)
         {
-            
             string[] picture1 =
             {
                 "ラーメン","焼きそば","牛丼","ハンバーグ","かつ丼定食",
             };
 
-            menus = new Menu[picture1.Length * 25];
-            for (int i = 0,j = 0; i < menus.Length; i += 2, j++)
+            menus = new Menu[picture1.Length * 4];
+            for (int i = 0, j = 0; i < menus.Length; i += 2, j++)
             {
-                
+                menus[i] = new Menu(picture1[j]);
+                menus[i + 1] = new Menu(picture1[j]);
             }
-
         }
 
         private void CreateButton2(ref Menu[] menus)
@@ -198,10 +187,11 @@ namespace RestaurantOrderSystem
                 "唐揚げ","フライドポテト","サラダ","コッペパン",
             };
 
-            menus = new Menu[picture2.Length * 25];
-            for (int i = 0,j =0 ; i < menus.Length; i += 2, j++)
+            menus = new Menu[picture2.Length * 4];
+            for (int i = 0, j = 0; i < menus.Length; i += 2, j++)
             {
-
+                menus[i] = new Menu(picture2[j]);
+                menus[i + 1] = new Menu(picture2[j]);
             }
         }
 
@@ -212,10 +202,11 @@ namespace RestaurantOrderSystem
                 "イチゴパフェ","ショートケーキ","ホットケーキ","モンブラン",
             };
 
-            menus = new Menu[picture3.Length * 25];
-            for (int i = 0,j = 0; i < menus.Length; i += 2, j++)
+            menus = new Menu[picture3.Length * 4];
+            for (int i = 0, j = 0; i < menus.Length; i += 2, j++)
             {
-
+                menus[i] = new Menu(picture3[j]);
+                menus[i + 1] = new Menu(picture3[j]);
             }
         }
 
@@ -226,83 +217,77 @@ namespace RestaurantOrderSystem
                 "コーラ","メロンソーダ","コーヒー",
             };
 
-            menus = new Menu[picture4.Length * 25];
-            for (int i = 0,j = 0; i < menus.Length; i += 2, j++)
+            menus = new Menu[picture4.Length * 4];
+            for (int i = 0, j = 0; i < menus.Length; i += 2, j++)
             {
-
+                menus[i] = new Menu(picture4[j]);
+                menus[i + 1] = new Menu(picture4[j]);
             }
         }
 
-        private void CreateText1(ref Menu[] menus)
+        private void CreateText1(ref Menu2[] texts)
         {
             string[] name1 =
             {
                 "ラーメン","焼きそば","牛丼","ハンバーグ","かつ丼定食",
             };
 
+            texts = new Menu2[name1.Length];
+            for (int i = 0, j = 0; i < texts.Length; i += 2, j++)
+            {
+                texts[i] = new Menu2(name1[j]);
+                texts[i + 1] = new Menu2(name1[j]);
+            }
         }
 
-        private void CreateText2(ref Menu[] menus)
+        private void CreateText2(ref Menu2[] texts)
         {
             string[] name2 =
             {
                 "唐揚げ","フライドポテト","サラダ","コッペパン",
             };
 
+            texts = new Menu2[name2.Length];
+            for (int i = 0, j = 0; i < texts.Length; i += 2, j++)
+            {
+                texts[i] = new Menu2(name2[j]);
+                texts[i + 1] = new Menu2(name2[j]);
+            }
         }
 
-        private void CreateText3(ref Menu[] menus)
+        private void CreateText3(ref Menu2[] texts)
         {
             string[] name3 =
             {
                 "イチゴパフェ","ショートケーキ","ホットケーキ","モンブラン",
             };
 
+            texts = new Menu2[name3.Length];
+            for (int i = 0, j = 0; i < texts.Length; i += 2, j++)
+            {
+                texts[i] = new Menu2(name3[j]);
+                texts[i + 1] = new Menu2(name3[j]);
+            }
         }
 
-        private void CreateText4(ref Menu[] menus)
+        private void CreateText4(ref Menu2[] texts)
         {
             string[] name4 =
             {
                 "コーラ","メロンソーダ","コーヒー",
             };
 
+            texts = new Menu2[name4.Length];
+            for (int i = 0, j = 0; i < texts.Length; i += 2, j++)
+            {
+                texts[i] = new Menu2(name4[j]);
+                texts[i + 1] = new Menu2(name4[j]);
+            }
         }
 
-        private void CreateLabel1(ref Menu[] menus)
+        private void CreateNud(ref Menu3 menus)
         {
-            string[] price1 =
-            {
-               "347円","296円","273円","316円","322円"
-            };
-
-        }
-
-        private void CreateLabel2(ref Menu[] menus)
-        {
-            string[] price2 =
-            {
-                "212円","197円","186円","121円"
-            };
-
-        }
-
-        private void CreateLabel3(ref Menu[] menus)
-        {
-            string[] price3 =
-            {
-                "165円","149円","133円","154円"
-            };
-
-        }
-
-        private void CreateLabel4(ref Menu[] menus)
-        {
-            string[] price4 =
-            {
-                "100円","100円","100円"
-            };
-
+            
         }
 
         private void btCom1_Click(object sender, EventArgs e)
@@ -346,6 +331,5 @@ namespace RestaurantOrderSystem
             Form2 f2 = new Form2();
             f2.Show();
         }
-
     }
 }
