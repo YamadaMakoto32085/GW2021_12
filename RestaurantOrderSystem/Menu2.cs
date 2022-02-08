@@ -10,7 +10,7 @@ namespace RestaurantOrderSystem
 {
     class Menu2 : TextBox
     {
-        private const int SizeW = 156, SizeH = 19;
+        private const int SizeW = 197, SizeH = 19;
         public Color TbColor { get; } = Color.PaleGreen;
 
         public Menu2(string text)

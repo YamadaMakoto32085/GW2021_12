@@ -73,6 +73,9 @@
     <Compile Include="Menu3.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Menu4.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
