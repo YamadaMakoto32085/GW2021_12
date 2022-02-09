@@ -37,15 +37,9 @@ namespace RestaurantOrderSystem
             this.btDessert = new System.Windows.Forms.Button();
             this.btDrink = new System.Windows.Forms.Button();
             this.plCmWindow = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.lbOrderList = new System.Windows.Forms.ListBox();
             this.tbSum = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.plCmWindow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNowTime
@@ -129,46 +123,11 @@ namespace RestaurantOrderSystem
             // plCmWindow
             // 
             this.plCmWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.plCmWindow.Controls.Add(this.textBox2);
-            this.plCmWindow.Controls.Add(this.numericUpDown1);
-            this.plCmWindow.Controls.Add(this.textBox1);
-            this.plCmWindow.Controls.Add(this.button1);
             this.plCmWindow.Location = new System.Drawing.Point(15, 28);
             this.plCmWindow.Name = "plCmWindow";
             this.plCmWindow.Size = new System.Drawing.Size(726, 708);
             this.plCmWindow.TabIndex = 4;
             this.plCmWindow.Layout += new System.Windows.Forms.LayoutEventHandler(this.plCmWindow_Layout);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(15, 177);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(79, 19);
-            this.textBox2.TabIndex = 3;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(91, 177);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(39, 19);
-            this.numericUpDown1.TabIndex = 2;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(15, 158);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 19);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(15, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 147);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // lbOrderList
             // 
@@ -216,9 +175,6 @@ namespace RestaurantOrderSystem
             this.Name = "Form1";
             this.Text = "飲食店専用注文システム";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.plCmWindow.ResumeLayout(false);
-            this.plCmWindow.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,10 +193,6 @@ namespace RestaurantOrderSystem
         private System.Windows.Forms.ListBox lbOrderList;
         private System.Windows.Forms.TextBox tbSum;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

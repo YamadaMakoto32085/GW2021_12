@@ -11,11 +11,12 @@ namespace RestaurantOrderSystem
     class Menu3 : TextBox
     {
         private const int SizeW = 79, SizeH = 19;
+        public int Price { get; set; }
         public Color TbColor { get; } = Color.PaleGreen;
 
-        public Menu3(string price)
+        public Menu3(int price)
         {
-            Text = price;
+            Price = price;
             Size = new Size(SizeW, SizeH);
             BackColor = TbColor;
         }
