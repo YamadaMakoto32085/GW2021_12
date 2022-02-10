@@ -14,249 +14,24 @@ namespace RestaurantOrderSystem
     {
         private Menu[] menuButtons;
         private Menu2[] menuTexts;
-        private Menu3[] menuPrices;
-        private Menu4 menuNud;
+        private Menu3[] menuTips;
+        private Menu4[] menuNud;
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //画面一番上の時計のプログラム
-            BackgroundWorker bw = new BackgroundWorker();
-            bw.DoWork += delegate (object s, DoWorkEventArgs ev)
-            {
-                while (true)
-                {
-                    Invoke((MethodInvoker)delegate ()
-                    {
-                        lbNowTime.Text = DateTime.Now.ToString("HH:mm:ss");
-                    });
-                }
-            };
-            bw.RunWorkerAsync();
-        }
-
-        private void plCmWindow_Layout(object sender, LayoutEventArgs e)
-        {
-            btMain.Click += BtMain_Click;
-            btSub.Click += BtSub_Click;
-            btDessert.Click += BtDessert_Click;
-            btDrink.Click += BtDrink_Click;
-        }
-
-        private void BtMain_Click(object sender, EventArgs e)
-        {
-            CreateButton1(ref menuButtons);
-            CreateText1(ref menuTexts);
-            CreatePrice1(ref menuPrices);
-            menuNud = new Menu4();
-
-            SuspendLayout();
-            const int btoffX = 15, btoffY = 13;
-            const int tboffX = 15, tboffY = 158;
-            const int proffX = 15, proffY = 177;
-            //const int nudoffX = 168, nudoffY = 158;
-            for (int i = 0; i < menuButtons.Length; i++)
-            {
-                menuButtons[i].Name = "menu" + i;
-                int sizeW = menuButtons[i].Size.Width;
-                int sizeH = menuButtons[i].Size.Height;
-                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
-                menuButtons[i].Click += MenuButtons_Click;
-            }
-
-            for (int i = 0; i < menuTexts.Length; i++)
-            {
-                menuTexts[i].Name = "name" + i;
-                int sizeW = menuTexts[i].Size.Width;
-                int sizeH = menuTexts[i].Size.Height;
-                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
-            }
-
-            for (int i = 0; i < menuPrices.Length; i++)
-            {
-                menuPrices[i].Name = "price" + i;
-                int sizeW = menuPrices[i].Size.Width;
-                int sizeH = menuPrices[i].Size.Height;
-                menuPrices[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
-            }
-
-            plCmWindow.Controls.AddRange(menuButtons);
-            plCmWindow.Controls.AddRange(menuTexts);
-            plCmWindow.Controls.AddRange(menuPrices);
-            plCmWindow.Controls.Add(menuNud);
-            ResumeLayout(false);
-            btMain.Enabled = false;
-            btSub.Enabled = true;
-            btDessert.Enabled = true;
-            btDrink.Enabled = true;
-        }
-
-        private void BtSub_Click(object sender, EventArgs e)
-        {
-            CreateButton2(ref menuButtons);
-            CreateText2(ref menuTexts);
-            CreatePrices2(ref menuPrices);
-            menuNud = new Menu4();
-
-            SuspendLayout();
-            const int btoffX = 15, btoffY = 13;
-            const int tboffX = 15, tboffY = 158;
-            const int proffX = 15, proffY = 177;
-            //const int nudoffX = 168, nudoffY = 158;
-            for (int i = 0; i < menuButtons.Length; i++)
-            {
-                menuButtons[i].Name = "menu" + i;
-                int sizeW = menuButtons[i].Size.Width;
-                int sizeH = menuButtons[i].Size.Height;
-                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
-                menuButtons[i].Click += MenuButtons_Click;
-            }
-
-            for (int i = 0; i < menuTexts.Length; i++)
-            {
-                menuTexts[i].Name = "name" + i;
-                int sizeW = menuTexts[i].Size.Width;
-                int sizeH = menuTexts[i].Size.Height;
-                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
-            }
-
-            for (int i = 0; i < menuPrices.Length; i++)
-            {
-                menuPrices[i].Name = "price" + i;
-                int sizeW = menuPrices[i].Size.Width;
-                int sizeH = menuPrices[i].Size.Height;
-                menuPrices[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
-            }
-
-            plCmWindow.Controls.AddRange(menuButtons);
-            plCmWindow.Controls.AddRange(menuTexts);
-            plCmWindow.Controls.AddRange(menuPrices);
-            plCmWindow.Controls.Add(menuNud);
-            ResumeLayout(false);
-            btMain.Enabled = true;
-            btSub.Enabled = false;
-            btDessert.Enabled = true;
-            btDrink.Enabled = true;
-        }
-
-        private void BtDessert_Click(object sender, EventArgs e)
-        {
-            CreateButton3(ref menuButtons);
-            CreateText3(ref menuTexts);
-            CreatePrices3(ref menuPrices);
-            menuNud = new Menu4();
-
-            SuspendLayout();
-            const int btoffX = 15, btoffY = 13;
-            const int tboffX = 15, tboffY = 158;
-            const int proffX = 15, proffY = 177;
-            //const int nudoffX = 168, nudoffY = 158;
-            for (int i = 0; i < menuButtons.Length; i++)
-            {
-                menuButtons[i].Name = "menu" + i;
-                int sizeW = menuButtons[i].Size.Width;
-                int sizeH = menuButtons[i].Size.Height;
-                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
-                menuButtons[i].Click += MenuButtons_Click;
-            }
-
-            for (int i = 0; i < menuTexts.Length; i++)
-            {
-                menuTexts[i].Name = "name" + i;
-                int sizeW = menuTexts[i].Size.Width;
-                int sizeH = menuTexts[i].Size.Height;
-                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
-            }
-
-            for (int i = 0; i < menuPrices.Length; i++)
-            {
-                menuPrices[i].Name = "name" + i;
-                int sizeW = menuPrices[i].Size.Width;
-                int sizeH = menuPrices[i].Size.Height;
-                menuPrices[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
-            }
-
-            plCmWindow.Controls.AddRange(menuButtons);
-            plCmWindow.Controls.AddRange(menuTexts);
-            plCmWindow.Controls.AddRange(menuPrices);
-            plCmWindow.Controls.Add(menuNud);
-            ResumeLayout(false);
-            btMain.Enabled = true;
-            btSub.Enabled = true;
-            btDessert.Enabled = false;
-            btDrink.Enabled = true;
-        }
-
-        private void BtDrink_Click(object sender, EventArgs e)
-        {
-            CreateButton4(ref menuButtons);
-            CreateText4(ref menuTexts);
-            CreatePrice4(ref menuPrices);
-            menuNud = new Menu4();
-
-            SuspendLayout();
-            const int btoffX = 15, btoffY = 13;
-            const int tboffX = 15, tboffY = 158;
-            const int proffX = 15, proffY = 177;
-            //const int nudoffX = 168, nudoffY = 158;
-            for (int i = 0; i < menuButtons.Length; i++)
-            {
-                menuButtons[i].Name = "menu" + i;
-                int sizeW = menuButtons[i].Size.Width;
-                int sizeH = menuButtons[i].Size.Height;
-                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
-                menuButtons[i].Click += MenuButtons_Click;
-            }
-
-            for (int i = 0; i < menuTexts.Length; i++)
-            {
-                menuTexts[i].Name = "name" + i;
-                int sizeW = menuTexts[i].Size.Width;
-                int sizeH = menuTexts[i].Size.Height;
-                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
-            }
-
-            for (int i = 0; i < menuPrices.Length; i++)
-            {
-                menuPrices[i].Name = "price" + i;
-                int sizeW = menuPrices[i].Size.Width;
-                int sizeH = menuPrices[i].Size.Height;
-                menuPrices[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
-            }
-
-            plCmWindow.Controls.AddRange(menuButtons);
-            plCmWindow.Controls.AddRange(menuTexts);
-            plCmWindow.Controls.AddRange(menuPrices);
-            plCmWindow.Controls.Add(menuNud);
-            ResumeLayout(false);
-            btMain.Enabled = true;
-            btSub.Enabled = true;
-            btDessert.Enabled = true;
-            btDrink.Enabled = false;
-        }
-
-        private void MenuButtons_Click(object sender, EventArgs e)
-        {
-            lbOrderList.SelectedItems.Add(menuTexts);
-            lbOrderList.SelectedItems.Add(menuNud);
-            lbOrderList.SelectedItems.Add(menuPrices);
         }
 
         private void CreateButton1(ref Menu[] menus)
         {
             string[] picture1 =
             {
-                "◇","◆","□","■","☆",
+                $"\th1.jpg",$"\th2.jpg",$"\th3.jpg",
             };
 
             menus = new Menu[picture1.Length];
-            for (int i = 0, j = 0; i < menus.Length; i += 2, j++)
+            for (int i = 0, j = 0; i < menus.Length; i += 1, j++)
             {
                 menus[i] = new Menu(picture1[j]);
-                menus[i + 1] = new Menu(picture1[j]);
             }
         }
 
@@ -264,14 +39,13 @@ namespace RestaurantOrderSystem
         {
             string[] picture2 =
             {
-                "◇","◆","□","■",
+                "◇","◆","□",
             };
 
             menus = new Menu[picture2.Length];
-            for (int i = 0, j = 0; i < menus.Length; i += 2, j++)
+            for (int i = 0, j = 0; i < menus.Length; i += 1, j++)
             {
                 menus[i] = new Menu(picture2[j]);
-                menus[i + 1] = new Menu(picture2[j]);
             }
         }
 
@@ -279,14 +53,13 @@ namespace RestaurantOrderSystem
         {
             string[] picture3 =
             {
-                "◇","◆","□","■",
+                "◇","◆","□",
             };
 
             menus = new Menu[picture3.Length];
-            for (int i = 0, j = 0; i < menus.Length; i += 2, j++)
+            for (int i = 0, j = 0; i < menus.Length; i += 1, j++)
             {
                 menus[i] = new Menu(picture3[j]);
-                menus[i + 1] = new Menu(picture3[j]);
             }
         }
 
@@ -298,131 +71,466 @@ namespace RestaurantOrderSystem
             };
 
             menus = new Menu[picture4.Length];
-            for (int i = 0, j = 0; i < menus.Length; i += 2, j++)
+            for (int i = 0, j = 0; i < menus.Length; i += 1, j++)
             {
                 menus[i] = new Menu(picture4[j]);
-                menus[i + 1] = new Menu(picture4[j]);
             }
         }
 
-        private void CreateText1(ref Menu2[] texts)
+        private void CreateText1(ref Menu2[] names)
         {
-            string[] name1 =
+            string[] text1 =
             {
-                "ラーメン","焼きそば","牛丼","ハンバーグ","かつ丼定食",
+                "ラーメン","焼きそば","牛丼",
             };
 
-            texts = new Menu2[name1.Length];
-            for (int i = 0, j = 0; i < texts.Length; i += 2, j++)
+            int[] price1 =
             {
-                texts[i] = new Menu2(name1[j]);
-                texts[i + 1] = new Menu2(name1[j]);
-            }
-        }
-
-        private void CreateText2(ref Menu2[] texts)
-        {
-            string[] name2 =
-            {
-                "唐揚げ","フライドポテト","サラダ","コッペパン",
+                439,396,388,
             };
 
-            texts = new Menu2[name2.Length];
-            for (int i = 0, j = 0; i < texts.Length; i += 2, j++)
+            names = new Menu2[text1.Length];
+            for (int i = 0, j = 0; i < names.Length; i += 1, j++)
             {
-                texts[i] = new Menu2(name2[j]);
-                texts[i + 1] = new Menu2(name2[j]);
+                names[i] = new Menu2(text1[j],price1[j]);
             }
         }
 
-        private void CreateText3(ref Menu2[] texts)
+        private void CreateText2(ref Menu2[] names)
         {
-            string[] name3 =
+            string[] text2 =
             {
-                "イチゴパフェ","ショートケーキ","ホットケーキ","モンブラン",
+                "唐揚げ","フライドポテト","サラダ",
             };
 
-            texts = new Menu2[name3.Length];
-            for (int i = 0, j = 0; i < texts.Length; i += 2, j++)
+            int[] price2 =
             {
-                texts[i] = new Menu2(name3[j]);
-                texts[i + 1] = new Menu2(name3[j]);
+                243,259,231,
+            };
+
+            names = new Menu2[text2.Length];
+            for (int i = 0, j = 0; i < names.Length; i += 1, j++)
+            {
+                names[i] = new Menu2(text2[j],price2[j]);
             }
         }
 
-        private void CreateText4(ref Menu2[] texts)
+        private void CreateText3(ref Menu2[] names)
         {
-            string[] name4 =
+            string[] text3 =
+            {
+                "イチゴパフェ","ショートケーキ","ホットケーキ",
+            };
+
+            int[] price3 =
+            {
+                213,208,210,
+            };
+
+            names = new Menu2[text3.Length];
+            for (int i = 0, j = 0; i < names.Length; i += 1, j++)
+            {
+                names[i] = new Menu2(text3[j],price3[j]);
+            }
+        }
+
+        private void CreateText4(ref Menu2[] names)
+        {
+            string[] text4 =
             {
                 "コーラ","メロンソーダ","コーヒー",
             };
 
-            texts = new Menu2[name4.Length];
-            for (int i = 0, j = 0; i < texts.Length; i += 2, j++)
-            {
-                texts[i] = new Menu2(name4[j]);
-                texts[i + 1] = new Menu2(name4[j]);
-            }
-        }
-
-        private void CreatePrice1(ref Menu3[] prices)
-        {
-            int[] price1 =
-            {
-                439,396,388,412,367,
-            };
-
-            prices = new Menu3[price1.Length];
-            for (int i = 0, j = 0; i < prices.Length; i += 2, j++)
-            {
-                prices[i] = new Menu3(price1[j]);
-                prices[i + 1] = new Menu3(price1[j]);
-            }
-        }
-
-        private void CreatePrices2(ref Menu3[] prices)
-        {
-            int[] price2 =
-            {
-                243,259,231,265,
-            };
-
-            prices = new Menu3[price2.Length];
-            for (int i = 0, j = 0; i < prices.Length; i += 2, j++)
-            {
-                prices[i] = new Menu3(price2[j]);
-                prices[i + 1] = new Menu3(price2[j]);
-            }
-        }
-
-        private void CreatePrices3(ref Menu3[] prices)
-        {
-            int[] price3 =
-            {
-                213,208,210,198,
-            };
-
-            prices = new Menu3[price3.Length];
-            for (int i = 0, j = 0; i < prices.Length; i += 2, j++)
-            {
-                prices[i] = new Menu3(price3[j]);
-                prices[i + 1] = new Menu3(price3[j]);
-            }
-        }
-
-        private void CreatePrice4(ref Menu3[] prices)
-        {
             int[] price4 =
             {
                 103,109,105,
             };
 
-            prices = new Menu3[price4.Length];
-            for (int i = 0, j = 0; i < prices.Length; i += 2, j++)
+            names = new Menu2[text4.Length];
+            for (int i = 0, j = 0; i < names.Length; i += 1, j++)
             {
-                prices[i] = new Menu3(price4[j]);
-                prices[i + 1] = new Menu3(price4[j]);
+                names[i] = new Menu2(text4[j],price4[j]);
             }
+        }
+
+        private void CreatePrices1(ref Menu3[] tips)
+        {
+            string[] text1 =
+            {
+                "今週のオススメ！","定番と言ったらコレ！","今日のイチオシ！"
+            };
+
+            tips = new Menu3[text1.Length];
+            for (int i = 0, j = 0; i < tips.Length; i += 1, j++)
+            {
+                tips[i] = new Menu3(text1[j]);
+            }
+        }
+
+        private void CreatePrices2(ref Menu3[] tips)
+        {
+
+            string[] text2 =
+            {
+                "今週のオススメ！","定番と言ったらコレ！","今日のイチオシ！"
+            };
+
+            tips = new Menu3[text2.Length];
+            for (int i = 0, j = 0; i < tips.Length; i += 1, j++)
+            {
+                tips[i] = new Menu3(text2[j]);
+            }
+        }
+
+        private void CreatePrices3(ref Menu3[] tips)
+        {
+
+            string[] text3 =
+            {
+                "今週のオススメ！","定番と言ったらコレ！","今日のイチオシ！"
+            };
+
+            tips = new Menu3[text3.Length];
+            for (int i = 0, j = 0; i < tips.Length; i += 1, j++)
+            {
+                tips[i] = new Menu3(text3[j]);
+            }
+        }
+
+        private void CreatePrices4(ref Menu3[] tips)
+        {
+
+            string[] text4 =
+            {
+                "今週のオススメ！","定番と言ったらコレ！","今日のイチオシ！"
+            };
+
+            tips = new Menu3[text4.Length];
+            for (int i = 0, j = 0; i < tips.Length; i += 1, j++)
+            {
+                tips[i] = new Menu3(text4[j]);
+            }
+        }
+
+        private void CreateNud1(ref Menu4[] nuds)
+        {
+            int[] nud1 =
+            {
+                0,0,0,
+            };
+
+            nuds = new Menu4[nud1.Length];
+            for (int i = 0, j = 0; i < nuds.Length; i += 1, j++)
+            {
+                nuds[i] = new Menu4(nud1[j]);
+            }
+        }
+
+        private void CreateNud2(ref Menu4[] nuds)
+        {
+            int[] nud2 =
+            {
+                0,0,0,
+            };
+
+            nuds = new Menu4[nud2.Length];
+            for (int i = 0, j = 0; i < nuds.Length; i += 1, j++)
+            {
+                nuds[i] = new Menu4(nud2[j]);
+            }
+        }
+
+        private void CreateNud3(ref Menu4[] nuds)
+        {
+            int[] nud3 =
+            {
+                0,0,0,
+            };
+
+            nuds = new Menu4[nud3.Length];
+            for (int i = 0, j = 0; i < nuds.Length; i += 1, j++)
+            {
+                nuds[i] = new Menu4(nud3[j]);
+            }
+        }
+
+        private void CreateNud4(ref Menu4[] nuds)
+        {
+            int[] nud4 =
+            {
+                0,0,0,
+            };
+
+            nuds = new Menu4[nud4.Length];
+            for (int i = 0, j = 0; i < nuds.Length; i += 1, j++)
+            {
+                nuds[i] = new Menu4(nud4[j]);
+            }
+        }
+
+        private void DeleteMenu()
+        {
+            plCmWindow.Controls.Clear();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+        
+        private void btMain_Click(object sender, EventArgs e)
+        {
+            DeleteMenu();
+            CreateButton1(ref menuButtons);
+            CreateText1(ref menuTexts);
+            CreatePrices1(ref menuTips);
+
+            SuspendLayout();
+            const int btoffX = 15, btoffY = 13;
+            const int tboffX = 15, tboffY = 159;
+            const int proffX = 15, proffY = 175;
+            for (int i = 0; i < menuButtons.Length; i++)
+            {
+                menuButtons[i].Name = "menu" + i;
+                int sizeW = menuButtons[i].Size.Width;
+                int sizeH = menuButtons[i].Size.Height;
+                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
+                menuButtons[i].Click += menuButton1_Click;
+            }
+
+            for (int i = 0; i < menuTexts.Length; i++)
+            {
+                menuTexts[i].Name = "name" + i;
+                int sizeW = menuTexts[i].Size.Width;
+                int sizeH = menuTexts[i].Size.Height;
+                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
+            }
+
+            for (int i = 0; i < menuTips.Length; i++)
+            {
+                menuTips[i].Name = "price" + i;
+                int sizeW = menuTips[i].Size.Width;
+                int sizeH = menuTips[i].Size.Height;
+                menuTips[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
+            }
+
+            plCmWindow.Controls.AddRange(menuButtons);
+            plCmWindow.Controls.AddRange(menuTexts);
+            plCmWindow.Controls.AddRange(menuTips);
+            ResumeLayout(false);
+            btMain.Enabled = false;
+            btSub.Enabled = true;
+            btDessert.Enabled = true;
+            btDrink.Enabled = true;
+        }
+
+        private void btSub_Click(object sender, EventArgs e)
+        {
+            DeleteMenu();
+            CreateButton2(ref menuButtons);
+            CreateText2(ref menuTexts);
+            CreatePrices2(ref menuTips);
+
+            SuspendLayout();
+            const int btoffX = 15, btoffY = 13;
+            const int tboffX = 15, tboffY = 159;
+            const int proffX = 15, proffY = 175;
+            
+            for (int i = 0; i < menuButtons.Length; i++)
+            {
+                menuButtons[i].Name = "menu" + i;
+                int sizeW = menuButtons[i].Size.Width;
+                int sizeH = menuButtons[i].Size.Height;
+                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
+                menuButtons[i].Click += menuButton2_Click;
+            }
+
+            for (int i = 0; i < menuTexts.Length; i++)
+            {
+                menuTexts[i].Name = "name" + i;
+                int sizeW = menuTexts[i].Size.Width;
+                int sizeH = menuTexts[i].Size.Height;
+                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
+            }
+
+            for (int i = 0; i < menuTips.Length; i++)
+            {
+                menuTips[i].Name = "price" + i;
+                int sizeW = menuTips[i].Size.Width;
+                int sizeH = menuTips[i].Size.Height;
+                menuTips[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
+            }
+
+            plCmWindow.Controls.AddRange(menuButtons);
+            plCmWindow.Controls.AddRange(menuTexts);
+            plCmWindow.Controls.AddRange(menuTips);
+            ResumeLayout(false);
+            btMain.Enabled = true;
+            btSub.Enabled = false;
+            btDessert.Enabled = true;
+            btDrink.Enabled = true;
+        }
+
+        private void btDessert_Click(object sender, EventArgs e)
+        {
+            DeleteMenu();
+            CreateButton3(ref menuButtons);
+            CreateText3(ref menuTexts);
+            CreatePrices3(ref menuTips);
+            CreateNud3(ref menuNud);
+
+            SuspendLayout();
+            const int btoffX = 15, btoffY = 13;
+            const int tboffX = 15, tboffY = 159;
+            const int proffX = 15, proffY = 175;
+            for (int i = 0; i < menuButtons.Length; i++)
+            {
+                menuButtons[i].Name = "menu" + i;
+                int sizeW = menuButtons[i].Size.Width;
+                int sizeH = menuButtons[i].Size.Height;
+                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
+                menuButtons[i].Click += menuButton3_Click;
+            }
+
+            for (int i = 0; i < menuTexts.Length; i++)
+            {
+                menuTexts[i].Name = "name" + i;
+                int sizeW = menuTexts[i].Size.Width;
+                int sizeH = menuTexts[i].Size.Height;
+                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
+            }
+
+            for (int i = 0; i < menuTips.Length; i++)
+            {
+                menuTips[i].Name = "price" + i;
+                int sizeW = menuTips[i].Size.Width;
+                int sizeH = menuTips[i].Size.Height;
+                menuTips[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
+            }
+
+            plCmWindow.Controls.AddRange(menuButtons);
+            plCmWindow.Controls.AddRange(menuTexts);
+            plCmWindow.Controls.AddRange(menuTips);
+            ResumeLayout(false);
+            btMain.Enabled = true;
+            btSub.Enabled = true;
+            btDessert.Enabled = false;
+            btDrink.Enabled = true;
+        }
+
+        private void btDrink_Click(object sender, EventArgs e)
+        {
+            DeleteMenu();
+            CreateButton4(ref menuButtons);
+            CreateText4(ref menuTexts);
+            CreatePrices4(ref menuTips);
+            CreateNud4(ref menuNud);
+
+            SuspendLayout();
+            const int btoffX = 15, btoffY = 13;
+            const int tboffX = 15, tboffY = 159;
+            const int proffX = 15, proffY = 175;
+            for (int i = 0; i < menuButtons.Length; i++)
+            {
+                menuButtons[i].Name = "menu" + i;
+                int sizeW = menuButtons[i].Size.Width;
+                int sizeH = menuButtons[i].Size.Height;
+                menuButtons[i].Location = new Point(btoffX + i % 8 * sizeW, btoffY + i / 8 * sizeH);
+                menuButtons[i].Click += menuButton4_Click;
+            }
+
+            for (int i = 0; i < menuTexts.Length; i++)
+            {
+                menuTexts[i].Name = "name" + i;
+                int sizeW = menuTexts[i].Size.Width;
+                int sizeH = menuTexts[i].Size.Height;
+                menuTexts[i].Location = new Point(tboffX + i % 8 * sizeW, tboffY + i / 8 * sizeH);
+            }
+
+            for (int i = 0; i < menuTips.Length; i++)
+            {
+                menuTips[i].Name = "price" + i;
+                int sizeW = menuTips[i].Size.Width;
+                int sizeH = menuTips[i].Size.Height;
+                menuTips[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
+            }
+
+            plCmWindow.Controls.AddRange(menuButtons);
+            plCmWindow.Controls.AddRange(menuTexts);
+            plCmWindow.Controls.AddRange(menuTips);
+            ResumeLayout(false);
+            btMain.Enabled = true;
+            btSub.Enabled = true;
+            btDessert.Enabled = true;
+            btDrink.Enabled = false;
+        }
+
+        private void menuButton1_Click(object sender, EventArgs e)
+        {
+            CreateNud1(ref menuNud);
+            const int nudoffX = 15, nudoffY = 194;
+            for (int i = 0; i < menuNud.Length; i++)
+            {
+                menuNud[i].Name = "nud" + i;
+                int sizeW = menuNud[i].Size.Width;
+                int sizeH = menuNud[i].Size.Height;
+                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
+            }
+
+            plCmWindow.Controls.AddRange(menuNud);
+            lbOrderList.Items.AddRange(menuTexts);
+            lbOrderList.Items.AddRange(menuNud);
+        }
+
+        private void menuButton2_Click(object sender, EventArgs e)
+        {
+            CreateNud2(ref menuNud);
+            const int nudoffX = 15, nudoffY = 194;
+            for (int i = 0; i < menuNud.Length; i++)
+            {
+                menuNud[i].Name = "nud" + i;
+                int sizeW = menuNud[i].Size.Width;
+                int sizeH = menuNud[i].Size.Height;
+                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
+            }
+
+            plCmWindow.Controls.AddRange(menuNud);
+            lbOrderList.Items.AddRange(menuTexts);
+            lbOrderList.Items.AddRange(menuNud);
+        }
+
+        private void menuButton3_Click(object sender, EventArgs e)
+        {
+            CreateNud3(ref menuNud);
+            const int nudoffX = 15, nudoffY = 194;
+            for (int i = 0; i < menuNud.Length; i++)
+            {
+                menuNud[i].Name = "nud" + i;
+                int sizeW = menuNud[i].Size.Width;
+                int sizeH = menuNud[i].Size.Height;
+                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
+            }
+
+            plCmWindow.Controls.AddRange(menuNud);
+            lbOrderList.Items.AddRange(menuTexts);
+            lbOrderList.Items.AddRange(menuNud);
+        }
+
+        private void menuButton4_Click(object sender, EventArgs e)
+        {
+            CreateNud4(ref menuNud);
+            const int nudoffX = 15, nudoffY = 194;
+            for (int i = 0; i < menuNud.Length; i++)
+            {
+                menuNud[i].Name = "nud" + i;
+                int sizeW = menuNud[i].Size.Width;
+                int sizeH = menuNud[i].Size.Height;
+                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
+            }
+
+            plCmWindow.Controls.AddRange(menuNud);
+            lbOrderList.Items.AddRange(menuTexts);
+            lbOrderList.Items.AddRange(menuNud);
         }
 
         private void btCancel_Click(object sender, EventArgs e)

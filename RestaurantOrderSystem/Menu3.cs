@@ -10,15 +10,16 @@ namespace RestaurantOrderSystem
 {
     class Menu3 : TextBox
     {
-        private const int SizeW = 79, SizeH = 19;
-        public int Price { get; set; }
-        public Color TbColor { get; } = Color.PaleGreen;
+        private const int SizeW = 197, SizeH = 19;
+        public Color TbColor { get; } = Color.SkyBlue;
 
-        public Menu3(int price)
+        public Menu3(string tips)
         {
-            Price = price;
+            Text = tips;
             Size = new Size(SizeW, SizeH);
             BackColor = TbColor;
+            Font = new Font("MS UI Gothic", 9, FontStyle.Bold);
+            ReadOnly = true;
         }
     }
 }

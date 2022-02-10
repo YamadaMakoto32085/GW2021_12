@@ -16,6 +16,7 @@ namespace RestaurantOrderSystem
         public Menu(string picture)
         {
             Picture = picture;
+            Text = picture;
             Size = new Size(SizeW, SizeH);
         }
 

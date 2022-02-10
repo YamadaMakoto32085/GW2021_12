@@ -10,13 +10,14 @@ namespace RestaurantOrderSystem
 {
     class Menu4 : NumericUpDown
     {
-        private const int SizeW = 39, SizeH = 19;
+        private const int SizeW = 197, SizeH = 19;
 
-        public Menu4()
+        public Menu4(int nud)
         {
+            Value = nud;
             Maximum = 10;
             Size = new Size(SizeW, SizeH);
-            Enabled = false;
+            TextAlign = HorizontalAlignment.Right;
         }
     }
 }

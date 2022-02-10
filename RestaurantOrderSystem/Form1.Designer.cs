@@ -29,7 +29,6 @@ namespace RestaurantOrderSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbNowTime = new System.Windows.Forms.Label();
             this.btMain = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.btOrder = new System.Windows.Forms.Button();
@@ -42,16 +41,6 @@ namespace RestaurantOrderSystem
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // lbNowTime
-            // 
-            this.lbNowTime.AutoSize = true;
-            this.lbNowTime.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbNowTime.Location = new System.Drawing.Point(12, 9);
-            this.lbNowTime.Name = "lbNowTime";
-            this.lbNowTime.Size = new System.Drawing.Size(62, 16);
-            this.lbNowTime.TabIndex = 0;
-            this.lbNowTime.Text = "00:00:00";
-            // 
             // btMain
             // 
             this.btMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -62,6 +51,7 @@ namespace RestaurantOrderSystem
             this.btMain.TabIndex = 3;
             this.btMain.Text = "メイン";
             this.btMain.UseVisualStyleBackColor = false;
+            this.btMain.Click += new System.EventHandler(this.btMain_Click);
             // 
             // btCancel
             // 
@@ -97,6 +87,7 @@ namespace RestaurantOrderSystem
             this.btSub.TabIndex = 3;
             this.btSub.Text = "サブ";
             this.btSub.UseVisualStyleBackColor = false;
+            this.btSub.Click += new System.EventHandler(this.btSub_Click);
             // 
             // btDessert
             // 
@@ -108,6 +99,7 @@ namespace RestaurantOrderSystem
             this.btDessert.TabIndex = 3;
             this.btDessert.Text = "デザート";
             this.btDessert.UseVisualStyleBackColor = false;
+            this.btDessert.Click += new System.EventHandler(this.btDessert_Click);
             // 
             // btDrink
             // 
@@ -119,24 +111,25 @@ namespace RestaurantOrderSystem
             this.btDrink.TabIndex = 3;
             this.btDrink.Text = "ドリンク";
             this.btDrink.UseVisualStyleBackColor = false;
+            this.btDrink.Click += new System.EventHandler(this.btDrink_Click);
             // 
             // plCmWindow
             // 
+            this.plCmWindow.AutoScroll = true;
             this.plCmWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.plCmWindow.Location = new System.Drawing.Point(15, 28);
+            this.plCmWindow.Location = new System.Drawing.Point(15, 12);
             this.plCmWindow.Name = "plCmWindow";
-            this.plCmWindow.Size = new System.Drawing.Size(726, 708);
+            this.plCmWindow.Size = new System.Drawing.Size(747, 724);
             this.plCmWindow.TabIndex = 4;
-            this.plCmWindow.Layout += new System.Windows.Forms.LayoutEventHandler(this.plCmWindow_Layout);
             // 
             // lbOrderList
             // 
             this.lbOrderList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.lbOrderList.FormattingEnabled = true;
             this.lbOrderList.ItemHeight = 12;
-            this.lbOrderList.Location = new System.Drawing.Point(747, 28);
+            this.lbOrderList.Location = new System.Drawing.Point(768, 12);
             this.lbOrderList.Name = "lbOrderList";
-            this.lbOrderList.Size = new System.Drawing.Size(394, 580);
+            this.lbOrderList.Size = new System.Drawing.Size(373, 592);
             this.lbOrderList.TabIndex = 5;
             // 
             // tbSum
@@ -160,7 +153,6 @@ namespace RestaurantOrderSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 821);
-            this.ControlBox = false;
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.tbSum);
             this.Controls.Add(this.lbOrderList);
@@ -171,7 +163,6 @@ namespace RestaurantOrderSystem
             this.Controls.Add(this.btDessert);
             this.Controls.Add(this.btSub);
             this.Controls.Add(this.btMain);
-            this.Controls.Add(this.lbNowTime);
             this.Name = "Form1";
             this.Text = "飲食店専用注文システム";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -181,8 +172,6 @@ namespace RestaurantOrderSystem
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbNowTime;
         private System.Windows.Forms.Button btMain;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Button btOrder;
