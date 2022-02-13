@@ -155,6 +155,7 @@ namespace RestaurantOrderSystem
             this.btDrink.UseVisualStyleBackColor = false;
             this.btDrink.Click += new System.EventHandler(this.btDrink_Click);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             // 
             // plCmWindow
@@ -192,12 +193,17 @@ namespace RestaurantOrderSystem
             this.textBox5.TabIndex = 6;
             this.textBox5.Text = "合計金額";
 >>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
+=======
+>>>>>>> 1c840de (途中)
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c840de (途中)
             this.ClientSize = new System.Drawing.Size(1537, 1026);
             this.ControlBox = false;
 =======
@@ -218,8 +224,11 @@ namespace RestaurantOrderSystem
             this.Controls.Add(this.tbCmWindow);
             this.Controls.Add(this.lbNowTime);
             this.Margin = new System.Windows.Forms.Padding(4);
+<<<<<<< HEAD
 =======
 >>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
+=======
+>>>>>>> 1c840de (途中)
             this.Name = "Form1";
             this.Text = "飲食店専用注文システム";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -65,6 +65,7 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <Compile Include="Menu.cs">
       <SubType>Component</SubType>
@@ -79,6 +80,8 @@
       <SubType>Component</SubType>
     </Compile>
 >>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
+=======
+>>>>>>> 1c840de (途中)
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

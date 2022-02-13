@@ -38,6 +38,9 @@ namespace RestaurantOrderSystem
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c840de (途中)
             this.label1.Location = new System.Drawing.Point(12, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 20);
@@ -49,6 +52,7 @@ namespace RestaurantOrderSystem
             this.btCheck.Location = new System.Drawing.Point(56, 86);
             this.btCheck.Name = "btCheck";
             this.btCheck.Size = new System.Drawing.Size(75, 48);
+<<<<<<< HEAD
 =======
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
@@ -62,6 +66,8 @@ namespace RestaurantOrderSystem
             this.btCheck.Name = "btCheck";
             this.btCheck.Size = new System.Drawing.Size(75, 38);
 >>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
+=======
+>>>>>>> 1c840de (途中)
             this.btCheck.TabIndex = 1;
             this.btCheck.Text = "確認";
             this.btCheck.UseVisualStyleBackColor = true;
@@ -69,6 +75,7 @@ namespace RestaurantOrderSystem
             // 
             // Form3
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,6 +85,11 @@ namespace RestaurantOrderSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(158, 94);
 >>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
+=======
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(188, 146);
+>>>>>>> 1c840de (途中)
             this.ControlBox = false;
             this.Controls.Add(this.btCheck);
             this.Controls.Add(this.label1);
