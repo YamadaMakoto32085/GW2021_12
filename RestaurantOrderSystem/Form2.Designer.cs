@@ -38,6 +38,7 @@ namespace RestaurantOrderSystem
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(13, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(309, 20);
@@ -49,6 +50,20 @@ namespace RestaurantOrderSystem
             this.btCancel.Location = new System.Drawing.Point(17, 91);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(105, 46);
+=======
+            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(238, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "注文を確定します。よろしいですか？";
+            // 
+            // btCancel
+            // 
+            this.btCancel.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btCancel.Location = new System.Drawing.Point(15, 83);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(75, 39);
+>>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
             this.btCancel.TabIndex = 1;
             this.btCancel.Text = "キャンセル";
             this.btCancel.UseVisualStyleBackColor = true;
@@ -56,9 +71,16 @@ namespace RestaurantOrderSystem
             // 
             // btDecision
             // 
+<<<<<<< HEAD
             this.btDecision.Location = new System.Drawing.Point(205, 91);
             this.btDecision.Name = "btDecision";
             this.btDecision.Size = new System.Drawing.Size(105, 46);
+=======
+            this.btDecision.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btDecision.Location = new System.Drawing.Point(164, 83);
+            this.btDecision.Name = "btDecision";
+            this.btDecision.Size = new System.Drawing.Size(75, 39);
+>>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
             this.btDecision.TabIndex = 1;
             this.btDecision.Text = "確定";
             this.btDecision.UseVisualStyleBackColor = true;
@@ -66,15 +88,25 @@ namespace RestaurantOrderSystem
             // 
             // Form2
             // 
+<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 159);
+=======
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(251, 140);
+>>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
             this.ControlBox = false;
             this.Controls.Add(this.btDecision);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
+<<<<<<< HEAD
             this.Text = "Form2";
+=======
+            this.Text = "注文確定";
+>>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
             this.ResumeLayout(false);
             this.PerformLayout();
 

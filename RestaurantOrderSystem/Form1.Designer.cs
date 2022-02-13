@@ -29,17 +29,19 @@ namespace RestaurantOrderSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbNowTime = new System.Windows.Forms.Label();
-            this.tbCmWindow = new System.Windows.Forms.TextBox();
-            this.tbOrdertList = new System.Windows.Forms.TextBox();
             this.btMain = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.btOrder = new System.Windows.Forms.Button();
             this.btSub = new System.Windows.Forms.Button();
             this.btDessert = new System.Windows.Forms.Button();
             this.btDrink = new System.Windows.Forms.Button();
+            this.plCmWindow = new System.Windows.Forms.Panel();
+            this.lbOrderList = new System.Windows.Forms.ListBox();
+            this.tbSum = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
+<<<<<<< HEAD
             // lbNowTime
             // 
             this.lbNowTime.AutoSize = true;
@@ -73,6 +75,8 @@ namespace RestaurantOrderSystem
             this.tbOrdertList.Size = new System.Drawing.Size(476, 884);
             this.tbOrdertList.TabIndex = 2;
             // 
+=======
+>>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
             // btMain
             // 
             this.btMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -150,23 +154,72 @@ namespace RestaurantOrderSystem
             this.btDrink.Text = "ドリンク";
             this.btDrink.UseVisualStyleBackColor = false;
             this.btDrink.Click += new System.EventHandler(this.btDrink_Click);
+<<<<<<< HEAD
+=======
+            // 
+            // plCmWindow
+            // 
+            this.plCmWindow.AutoScroll = true;
+            this.plCmWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.plCmWindow.Location = new System.Drawing.Point(15, 12);
+            this.plCmWindow.Name = "plCmWindow";
+            this.plCmWindow.Size = new System.Drawing.Size(747, 724);
+            this.plCmWindow.TabIndex = 4;
+            // 
+            // lbOrderList
+            // 
+            this.lbOrderList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbOrderList.FormattingEnabled = true;
+            this.lbOrderList.ItemHeight = 12;
+            this.lbOrderList.Location = new System.Drawing.Point(768, 12);
+            this.lbOrderList.Name = "lbOrderList";
+            this.lbOrderList.Size = new System.Drawing.Size(373, 592);
+            this.lbOrderList.TabIndex = 5;
+            // 
+            // tbSum
+            // 
+            this.tbSum.Location = new System.Drawing.Point(1010, 605);
+            this.tbSum.Name = "tbSum";
+            this.tbSum.Size = new System.Drawing.Size(131, 19);
+            this.tbSum.TabIndex = 6;
+            this.tbSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(959, 605);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(54, 19);
+            this.textBox5.TabIndex = 6;
+            this.textBox5.Text = "合計金額";
+>>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1537, 1026);
             this.ControlBox = false;
+=======
+            this.ClientSize = new System.Drawing.Size(1153, 821);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tbSum);
+            this.Controls.Add(this.lbOrderList);
+            this.Controls.Add(this.plCmWindow);
+>>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
             this.Controls.Add(this.btOrder);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btDrink);
             this.Controls.Add(this.btDessert);
             this.Controls.Add(this.btSub);
             this.Controls.Add(this.btMain);
+<<<<<<< HEAD
             this.Controls.Add(this.tbOrdertList);
             this.Controls.Add(this.tbCmWindow);
             this.Controls.Add(this.lbNowTime);
             this.Margin = new System.Windows.Forms.Padding(4);
+=======
+>>>>>>> 069bc0a93294017602a2403c65947f12c0d1af20
             this.Name = "Form1";
             this.Text = "飲食店専用注文システム";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -176,16 +229,16 @@ namespace RestaurantOrderSystem
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbNowTime;
-        private System.Windows.Forms.TextBox tbCmWindow;
-        private System.Windows.Forms.TextBox tbOrdertList;
         private System.Windows.Forms.Button btMain;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Button btOrder;
         private System.Windows.Forms.Button btSub;
         private System.Windows.Forms.Button btDessert;
         private System.Windows.Forms.Button btDrink;
+        private System.Windows.Forms.Panel plCmWindow;
+        private System.Windows.Forms.ListBox lbOrderList;
+        private System.Windows.Forms.TextBox tbSum;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
 
