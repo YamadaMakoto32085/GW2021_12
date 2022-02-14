@@ -25,7 +25,7 @@ namespace RestaurantOrderSystem
         {
             string[] picture1 =
             {
-                $"\th1.jpg",$"\th2.jpg",$"\th3.jpg",
+                "\\th1.jpg","\\th2.jpg","\\th3.jpg",
             };
 
             menus = new Menu[picture1.Length];
@@ -284,11 +284,13 @@ namespace RestaurantOrderSystem
             CreateButton1(ref menuButtons);
             CreateText1(ref menuTexts);
             CreatePrices1(ref menuTips);
-
+            CreateNud1(ref menuNud);
+            
             SuspendLayout();
             const int btoffX = 15, btoffY = 13;
             const int tboffX = 15, tboffY = 159;
             const int proffX = 15, proffY = 175;
+            const int nudoffX = 15, nudoffY = 194;
             for (int i = 0; i < menuButtons.Length; i++)
             {
                 menuButtons[i].Name = "menu" + i;
@@ -314,9 +316,18 @@ namespace RestaurantOrderSystem
                 menuTips[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
             }
 
+            for (int i = 0; i < menuNud.Length; i++)
+            {
+                menuNud[i].Name = "nud" + i;
+                int sizeW = menuNud[i].Size.Width;
+                int sizeH = menuNud[i].Size.Height;
+                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
+            }
+
             plCmWindow.Controls.AddRange(menuButtons);
             plCmWindow.Controls.AddRange(menuTexts);
             plCmWindow.Controls.AddRange(menuTips);
+            plCmWindow.Controls.AddRange(menuNud);
             ResumeLayout(false);
             btMain.Enabled = false;
             btSub.Enabled = true;
@@ -330,12 +341,13 @@ namespace RestaurantOrderSystem
             CreateButton2(ref menuButtons);
             CreateText2(ref menuTexts);
             CreatePrices2(ref menuTips);
-
+            CreateNud2(ref menuNud);
+            
             SuspendLayout();
             const int btoffX = 15, btoffY = 13;
             const int tboffX = 15, tboffY = 159;
             const int proffX = 15, proffY = 175;
-            
+            const int nudoffX = 15, nudoffY = 194;
             for (int i = 0; i < menuButtons.Length; i++)
             {
                 menuButtons[i].Name = "menu" + i;
@@ -361,9 +373,18 @@ namespace RestaurantOrderSystem
                 menuTips[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
             }
 
+            for (int i = 0; i < menuNud.Length; i++)
+            {
+                menuNud[i].Name = "nud" + i;
+                int sizeW = menuNud[i].Size.Width;
+                int sizeH = menuNud[i].Size.Height;
+                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
+            }
+
             plCmWindow.Controls.AddRange(menuButtons);
             plCmWindow.Controls.AddRange(menuTexts);
             plCmWindow.Controls.AddRange(menuTips);
+            plCmWindow.Controls.AddRange(menuNud);
             ResumeLayout(false);
             btMain.Enabled = true;
             btSub.Enabled = false;
@@ -383,6 +404,7 @@ namespace RestaurantOrderSystem
             const int btoffX = 15, btoffY = 13;
             const int tboffX = 15, tboffY = 159;
             const int proffX = 15, proffY = 175;
+            const int nudoffX = 15, nudoffY = 194;
             for (int i = 0; i < menuButtons.Length; i++)
             {
                 menuButtons[i].Name = "menu" + i;
@@ -408,9 +430,18 @@ namespace RestaurantOrderSystem
                 menuTips[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
             }
 
+            for (int i = 0; i < menuNud.Length; i++)
+            {
+                menuNud[i].Name = "nud" + i;
+                int sizeW = menuNud[i].Size.Width;
+                int sizeH = menuNud[i].Size.Height;
+                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
+            }
+
             plCmWindow.Controls.AddRange(menuButtons);
             plCmWindow.Controls.AddRange(menuTexts);
             plCmWindow.Controls.AddRange(menuTips);
+            plCmWindow.Controls.AddRange(menuNud);
             ResumeLayout(false);
             btMain.Enabled = true;
             btSub.Enabled = true;
@@ -430,6 +461,7 @@ namespace RestaurantOrderSystem
             const int btoffX = 15, btoffY = 13;
             const int tboffX = 15, tboffY = 159;
             const int proffX = 15, proffY = 175;
+            const int nudoffX = 15, nudoffY = 194;
             for (int i = 0; i < menuButtons.Length; i++)
             {
                 menuButtons[i].Name = "menu" + i;
@@ -455,9 +487,18 @@ namespace RestaurantOrderSystem
                 menuTips[i].Location = new Point(proffX + i % 8 * sizeW, proffY + i / 8 * sizeH);
             }
 
+            for (int i = 0; i < menuNud.Length; i++)
+            {
+                menuNud[i].Name = "nud" + i;
+                int sizeW = menuNud[i].Size.Width;
+                int sizeH = menuNud[i].Size.Height;
+                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
+            }
+
             plCmWindow.Controls.AddRange(menuButtons);
             plCmWindow.Controls.AddRange(menuTexts);
             plCmWindow.Controls.AddRange(menuTips);
+            plCmWindow.Controls.AddRange(menuNud);
             ResumeLayout(false);
             btMain.Enabled = true;
             btSub.Enabled = true;
@@ -467,68 +508,24 @@ namespace RestaurantOrderSystem
 
         private void menuButton1_Click(object sender, EventArgs e)
         {
-            CreateNud1(ref menuNud);
-            const int nudoffX = 15, nudoffY = 194;
-            for (int i = 0; i < menuNud.Length; i++)
-            {
-                menuNud[i].Name = "nud" + i;
-                int sizeW = menuNud[i].Size.Width;
-                int sizeH = menuNud[i].Size.Height;
-                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
-            }
-
-            plCmWindow.Controls.AddRange(menuNud);
             lbOrderList.Items.AddRange(menuTexts);
             lbOrderList.Items.AddRange(menuNud);
         }
 
         private void menuButton2_Click(object sender, EventArgs e)
         {
-            CreateNud2(ref menuNud);
-            const int nudoffX = 15, nudoffY = 194;
-            for (int i = 0; i < menuNud.Length; i++)
-            {
-                menuNud[i].Name = "nud" + i;
-                int sizeW = menuNud[i].Size.Width;
-                int sizeH = menuNud[i].Size.Height;
-                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
-            }
-
-            plCmWindow.Controls.AddRange(menuNud);
             lbOrderList.Items.AddRange(menuTexts);
             lbOrderList.Items.AddRange(menuNud);
         }
 
         private void menuButton3_Click(object sender, EventArgs e)
         {
-            CreateNud3(ref menuNud);
-            const int nudoffX = 15, nudoffY = 194;
-            for (int i = 0; i < menuNud.Length; i++)
-            {
-                menuNud[i].Name = "nud" + i;
-                int sizeW = menuNud[i].Size.Width;
-                int sizeH = menuNud[i].Size.Height;
-                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
-            }
-
-            plCmWindow.Controls.AddRange(menuNud);
             lbOrderList.Items.AddRange(menuTexts);
             lbOrderList.Items.AddRange(menuNud);
         }
 
         private void menuButton4_Click(object sender, EventArgs e)
         {
-            CreateNud4(ref menuNud);
-            const int nudoffX = 15, nudoffY = 194;
-            for (int i = 0; i < menuNud.Length; i++)
-            {
-                menuNud[i].Name = "nud" + i;
-                int sizeW = menuNud[i].Size.Width;
-                int sizeH = menuNud[i].Size.Height;
-                menuNud[i].Location = new Point(nudoffX + i % 8 * sizeW, nudoffY + i / 8 * sizeH);
-            }
-
-            plCmWindow.Controls.AddRange(menuNud);
             lbOrderList.Items.AddRange(menuTexts);
             lbOrderList.Items.AddRange(menuNud);
         }
