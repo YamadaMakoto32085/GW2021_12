@@ -64,8 +64,8 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-<<<<<<< HEAD
+ HEAD
+ HEAD
 =======
     <Compile Include="Menu.cs">
       <SubType>Component</SubType>
